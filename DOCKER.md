@@ -1,4 +1,8 @@
 ## HOT reload (live update of local folder with container)
+
+### Create network
+```docker network create todo-net ```
+
 ### DB container
 Use a named volume DOCKERDB.\
 /data/db is the directory where the database is the mongodb container (we can't choose it).\
