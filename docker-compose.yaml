@@ -1,0 +1,21 @@
+# Execute with docker-compose up
+version: "3.8"
+services:
+  ############## Database ##############
+  mongodb:
+    # Image name
+    image: mongo
+    # Volumes
+    volumes:
+      # /data/db is the directory where the database is the mongodb container (we can't choose it)
+      - mongodbdata:/data/db
+    # ENV Variable passed to image
+    env_file:
+      - ./env/mongo.env
+    container_name: mongodb
+  ############### backend ##############
+  ############### frontend ##############
+
+# Need to specify named volumes here
+volumes:
+  mongodbdata:

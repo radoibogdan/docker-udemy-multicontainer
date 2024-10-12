@@ -50,7 +50,7 @@ app.delete("/todos/:id", async (req, res) => {
 // Mongo Db port : 27017
 // Mongo Collection : todos-app
 mongoose.connect(
-  "mongodb://mongodb:27017/todos-app",
+  "mongodb://<username>:<password>mongodb:27017/todos-app",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
