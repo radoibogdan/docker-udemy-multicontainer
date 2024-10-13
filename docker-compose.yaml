@@ -29,8 +29,22 @@ services:
     depends_on:
       - mongodb # service_name
     container_name: backend
-
   ############### frontend ##############
+  frontend:
+    #react app specific key:values, allows application to be run with the "-it" (interactive) flag
+    stdin_open: true
+    tty: true
+    # end
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend/src:/app/src
+    ports:
+      - 3000:3000
+    depends_on:
+      - backend
+    container_name: frontend
 
 # Need to specify named volumes here
 volumes:

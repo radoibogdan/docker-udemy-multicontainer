@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.get("/todos", async (req, res) => {
-  console.log('heelddo');
+  console.log('GOODBYE');
   const todos = await Todo.find();
   return res.status(200).json({
     todos,
